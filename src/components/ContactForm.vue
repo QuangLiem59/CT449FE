@@ -20,6 +20,11 @@
             <Field name="phone" type="tel" class="form-control" v-model="contactLocal.phone" />
             <ErrorMessage name="phone" class="error-feedback" />
         </div>
+        <div class="form-group">
+            <label for="hobby">Sở thích</label>
+            <Field name="hobby" type="text" class="form-control" v-model="contactLocal.hobby" />
+            <ErrorMessage name="hobby" class="error-feedback" />
+        </div>
         <div class="form-group form-check">
             <input
                 name="favorite"
@@ -74,6 +79,7 @@ export default {
                 .email("E-mail không đúng.")
                 .max(50, "E-mail tối đa 50 ký tự."),
             address: yup.string().max(100, "Địa chỉ tối đa 100 ký tự."),
+            hobby: yup.string().max(100, "Sở thích tối đa 100 ký tự."),
             phone: yup
                 .string()
                 .matches(
